@@ -14,13 +14,21 @@
 
 char		*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*new_str;
+	char	*start;
+	char	*result;
 
-	if (!s1 || !s2)
+	if (!s1 && !s2)
 		return (NULL);
-	if (!(new_str = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
-		return (NULL);
-	new_str = ft_strcpy(new_str, s1);
-	new_str = ft_strcat(new_str, s2);
-	return (new_str);
+	result = ft_strnew((s1 ? ft_strlen(s1) : 0) + (s2 ? ft_strlen(s2) : 0));
+	if ((start = result))
+	{
+		if (s1)
+			while (*s1)
+				*result++ = *s1++;
+		if (s2)
+			while (*s2)
+				*result++ = *s2++;
+		*result = '\0';
+	}
+	return (start);
 }
