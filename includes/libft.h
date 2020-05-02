@@ -22,7 +22,7 @@
 
 # define BASE_LOWER "0123456789abcdefghijklmnopqrstuvwxyz"
 # define BASE_UPPER "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-# define FT_INT_MAX (int)((unsigned int)(~0L) >> 1);
+# define FT_INT_MAX (int)((unsigned int)(~0L) >> 1)
 
 typedef struct		s_list
 {
